@@ -1,0 +1,6 @@
+/*
+Errors or bugs in code that cause tyour program to run incorrectly.
+mistakes makde by program.
+
+
+*/
