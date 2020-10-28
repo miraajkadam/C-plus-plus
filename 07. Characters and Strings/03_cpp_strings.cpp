@@ -25,7 +25,16 @@ int main () {
 	for (int i : full) 
 		cout << i << " "; // outputs ascii
 
-	
+	cout << endl;
+	full.erase (0, 4);
+	cout << full;
+
+	cout << endl;
+
+	string name = "Miraaj Kadam";
+	size_t pos = name.find ("Kadam");
+	if (pos != string::npos)
+		cout << pos;
 
 	return 0;	
 }
