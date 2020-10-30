@@ -1,0 +1,7 @@
+/*
+
+Pointers to constants
+constant pointers
+Constant pointers to constants
+
+*/
