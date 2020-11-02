@@ -6,6 +6,7 @@ Does not expect any arguments
 If no constructers are written the C++ will generate Default Constructor that does nothing
 Called when we instantiate a new object with no arguments
 
+// compiler generator constructor will be called if below two are executed without any constructor defined
 Player frank;
 Player *enemy = new Player();
 
@@ -28,18 +29,24 @@ public:
 		return name;
 	}
 
-	Player() {
-		name = "None";
-		health = 100;
-		xp = 3;
+	// Player() {
+	// 	name = "None";
+	// 	health = 100;
+	// 	xp = 3;
+	// }
+
+	Player (string namev, int healthv, int xpv) {
+		name = namev;
+		health = healthv;
+		xp = xpv;
 	}
 };
 
 int main () {
 	ios_base::sync_with_stdio (false);
 
-	Player frank;
-	frank.set_name ("Frank");
+	Player frank ("Frank", 100, 1);
+	// frank.set_name ("Frank");
 	cout << frank.get_name () << endl;;
 
 	return 0;	
