@@ -1,0 +1,5 @@
+/*
+
+Exceptions can also be thrown from within a class
+
+*/
