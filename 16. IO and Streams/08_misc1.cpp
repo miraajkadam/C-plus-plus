@@ -11,7 +11,6 @@ struct City {
     double cost;
 };
 
-// Assume each country has at least 1 city
 struct Country {
     string name;
     vector<City> cities;
@@ -54,27 +53,36 @@ int main() {
         }
     };
 
-    // Unformatted display so you can see how to access the vector elements
-    // cout << tours.title << endl;
-    // for(auto country : tours.countries) {   // loop through the countries
-    //     cout << country.name << endl;
-    //     for(auto city : country.cities) {       // loop through the cities for each country
-    //         cout << "\t" << city.name 
-    //                       << "\t" << city.population 
-    //                       << "\t" << city.cost 
-    //                       << endl;
-    //     }
-    // }
-
-    // cout << endl << endl;
     cout << "1234567890123456789012345678901234567890123456789012345678901234567890" << endl;
-    cout << setw(35);
-    for (int i = 0; i < tours.title.size() / 2; i++) {
+    cout << endl;
+    cout << setw(22);
+    for (int i = 0; i < tours.title.size(); i++) {
     	cout << tours.title[i];
     }
+    cout << endl << endl;
+    cout << left << setw(20) << "Country" << setw(20) << "City" << right  << setw(15) << "Population" << setw(15) << "Price" << endl;
+    cout << setfill('-') << setw(70) << '-' << endl;
 
-    // for (int i = tours.title.size() / 2; i < tours.title.size(); i++) {
-    // 	cout << tours.title[i];
-    // }
+    cout << fixed << setprecision(2) << showpoint;
+    cout << setfill(' ');
+
+    for (int i = 0; i < tours.countries.size(); i++) {
+    	cout << setw(20) << left << tours.countries[i].name;
+    	for (int j = 0; j < tours.countries[i].cities.size(); j++) {
+    		if (j == 0) {
+    			cout << setw(25) << left << tours.countries[i].cities[j].name;
+    			cout << setw(10) << setfill(' ') << right <<  tours.countries[i].cities[j].population;
+    			cout << setw(15) << setfill(' ') << right << tours.countries[i].cities[j].cost;
+    			cout << endl;
+    		}
+			else {
+				cout << setw(20) << " " << setfill(' ') << setw(25) << left << tours.countries[i].cities[j].name;
+				cout << setw(10) << setfill(' ') << right <<  tours.countries[i].cities[j].population;
+    			cout << setw(15) << setfill(' ') << right << tours.countries[i].cities[j].cost;
+    			cout << endl;
+			}
+    	}
+    }
+    
     return 0;
 }
